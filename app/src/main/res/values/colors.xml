@@ -3,4 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg">#997BB5E3</color>
+    <color name="bgAirPol">#9988939C</color>
+    <color name="bgUVRad">#99513B61</color>
+
+    <color name="UVGreenIndicate">#1FA300</color>
+    <color name="UVYellowIndicate">#FFBB00</color>
+    <color name="UVOrangeIndicate">#FF7721</color>
+    <color name="UVRedIndicate">#FF0000</color>
+    <color name="UVPerpleIndicate">#D227FF</color>
 </resources>

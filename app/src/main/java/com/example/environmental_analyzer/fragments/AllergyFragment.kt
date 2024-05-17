@@ -5,23 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.environmental_analyzer.databinding.FragmentMoreInformationBinding
+import com.example.environmental_analyzer.databinding.FragmentAllergyBinding
 
-class RecomendationFragment : Fragment() {
+class AllergyFragment : Fragment() {
 
-    private lateinit var binding: FragmentMoreInformationBinding
-
+    lateinit var binding: FragmentAllergyBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        binding = FragmentMoreInformationBinding.inflate(inflater, container, false)
+        binding = FragmentAllergyBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     companion object {
-
         @JvmStatic
-        fun newInstance() = RecomendationFragment()
+        fun newInstance() = AllergyFragment()
     }
 }

@@ -1,4 +1,4 @@
-package adapters
+package com.example.environmental_analyzer.adapters
 
 import android.view.LayoutInflater
 import android.view.View

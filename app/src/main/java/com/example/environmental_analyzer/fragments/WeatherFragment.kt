@@ -1,7 +1,5 @@
 package com.example.environmental_analyzer.fragments
 
-import adapters.VpAdapter
-import adapters.WeatherModel
 import android.Manifest
 import android.content.Context
 import android.net.ConnectivityManager
@@ -21,7 +19,11 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.environmental_analyzer.MainViewModel
+import com.example.environmental_analyzer.adapters.VpAdapter
+import com.example.environmental_analyzer.adapters.WeatherModel
 import com.example.environmental_analyzer.databinding.FragmentWeatherBinding
+import com.example.environmental_analyzer.recycleFragments.DaysFragment
+import com.example.environmental_analyzer.recycleFragments.HoursFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.squareup.picasso.Picasso
 import org.json.JSONObject

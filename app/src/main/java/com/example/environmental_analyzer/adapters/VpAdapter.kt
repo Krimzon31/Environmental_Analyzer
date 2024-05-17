@@ -1,4 +1,4 @@
-package adapters
+package com.example.environmental_analyzer.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

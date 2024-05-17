@@ -1,7 +1,7 @@
-package com.example.environmental_analyzer.fragments
+package com.example.environmental_analyzer.recycleFragments
 
-import adapters.WeatherAdapter
-import adapters.WeatherModel
+import com.example.environmental_analyzer.adapters.WeatherAdapter
+import com.example.environmental_analyzer.adapters.WeatherModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

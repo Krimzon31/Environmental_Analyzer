@@ -14,7 +14,7 @@ class UV_radiationFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = FragmentUVRadiationBinding.inflate(inflater, container, false)
         return binding.root
     }
