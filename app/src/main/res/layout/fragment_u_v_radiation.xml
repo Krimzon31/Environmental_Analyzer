@@ -144,6 +144,8 @@
         android:layout_height="433dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageUvbackground"
         app:layout_constraintEnd_toEndOf="@+id/cardViewUVrad"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/cardViewUVrad"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewUVrad" />
+        app:layout_constraintTop_toBottomOf="@+id/cardViewUVrad"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

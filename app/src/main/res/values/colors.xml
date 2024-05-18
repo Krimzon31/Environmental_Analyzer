@@ -7,6 +7,8 @@
     <color name="bgAirPolItem">#8B99A8B5</color>
     <color name="bgUVRad">#99513B61</color>
     <color name="bgUVRadItem">#9978598E</color>
+    <color name="bgzGeomagnetic">#68F17B13</color>
+    <color name="bgzGeomagnetic2">#99B86C28</color>
 
     <color name="UVGreenIndicate">#1FA300</color>
     <color name="UVYellowIndicate">#FFBB00</color>
