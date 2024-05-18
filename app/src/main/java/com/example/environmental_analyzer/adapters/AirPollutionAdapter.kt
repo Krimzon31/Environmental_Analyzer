@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.environmental_analyzer.MAIN
+import com.example.environmental_analyzer.Models.AirPollutionModel
 import com.example.environmental_analyzer.R
 
 class AirPollutionAdapter(private val AirList: List<AirPollutionModel>) : RecyclerView.Adapter<AirPollutionAdapter.MyViewHolder>(){

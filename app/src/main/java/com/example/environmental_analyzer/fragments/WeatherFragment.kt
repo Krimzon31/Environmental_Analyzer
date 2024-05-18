@@ -26,7 +26,7 @@ import com.example.environmental_analyzer.MainActivity
 import com.example.environmental_analyzer.MainDb
 import com.example.environmental_analyzer.MainViewModel
 import com.example.environmental_analyzer.adapters.VpAdapter
-import com.example.environmental_analyzer.adapters.WeatherModel
+import com.example.environmental_analyzer.Models.WeatherModel
 import com.example.environmental_analyzer.databinding.FragmentWeatherBinding
 import com.example.environmental_analyzer.recycleFragments.DaysFragment
 import com.example.environmental_analyzer.recycleFragments.HoursFragment
@@ -136,7 +136,7 @@ class WeatherFragment : Fragment() {
         val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
         val isConnected: Boolean = activeNetwork?.isConnected ?: false
         if(isConnected){
-            Toast.makeText(activity, "Данные обновленны", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Приложение подключено к интернету", Toast.LENGTH_LONG).show()
         }
         else{
             Toast.makeText(activity, "Отсутствует подключение к интернету", Toast.LENGTH_LONG).show()

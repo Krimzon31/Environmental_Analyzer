@@ -1,6 +1,6 @@
 package com.example.environmental_analyzer
 
-import com.example.environmental_analyzer.adapters.WeatherModel
+import com.example.environmental_analyzer.Models.WeatherModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 

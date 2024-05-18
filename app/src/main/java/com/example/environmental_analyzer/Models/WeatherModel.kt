@@ -1,4 +1,4 @@
-package com.example.environmental_analyzer.adapters
+package com.example.environmental_analyzer.Models
 
 data class WeatherModel (
     val city: String,

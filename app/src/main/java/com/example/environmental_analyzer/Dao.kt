@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.environmental_analyzer.Entity.AirPollution
+import com.example.environmental_analyzer.Entity.UVRadiation
 import com.example.environmental_analyzer.Entity.Weather
 import kotlinx.coroutines.flow.Flow
 
@@ -35,4 +36,17 @@ interface Dao {
 
     @Query("DELETE FROM airpollution")
     fun deleteAirPollution()
+
+
+    @Insert
+    fun insertUVRad(uvRadiation: UVRadiation)
+
+    @Query("SELECT * FROM uvradiation")
+    fun getUVRad(): Flow<List<UVRadiation>>
+
+    @Query("SELECT COUNT(*) FROM uvradiation")
+    fun countTableRowsUVRad(): LiveData<Int>
+
+    @Query("DELETE FROM uvradiation")
+    fun deleteUVRad()
 }

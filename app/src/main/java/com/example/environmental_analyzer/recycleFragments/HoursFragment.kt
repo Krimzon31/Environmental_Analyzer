@@ -9,7 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.environmental_analyzer.MainViewModel
 import com.example.environmental_analyzer.adapters.WeatherAdapter
-import com.example.environmental_analyzer.adapters.WeatherModel
+import com.example.environmental_analyzer.Models.WeatherModel
 import com.example.environmental_analyzer.databinding.FragmentHoursBinding
 import org.json.JSONArray
 import org.json.JSONObject

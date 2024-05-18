@@ -3,11 +3,13 @@ package com.example.environmental_analyzer.fragments
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
@@ -19,9 +21,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.environmental_analyzer.Entity.AirPollution
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainDb
+import com.example.environmental_analyzer.Models.AirPollutionModel
 import com.example.environmental_analyzer.R
 import com.example.environmental_analyzer.adapters.AirPollutionAdapter
-import com.example.environmental_analyzer.adapters.AirPollutionModel
 import com.example.environmental_analyzer.databinding.FragmentAirPollutionBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -31,6 +33,8 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.jsoup.Jsoup
 import java.io.IOException
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class AirPollutionFragment : Fragment() {
 
@@ -46,6 +50,7 @@ class AirPollutionFragment : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkNETConnection()
@@ -61,9 +66,16 @@ class AirPollutionFragment : Fragment() {
             lifecycleScope.launchWhenStarted {
                 setData("penza")
             }
+            updateCurrentCard()
+            Toast.makeText(
+                MAIN,
+                "Данные обновлены",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun Proverca(){
         val database = MainDb.getDb(MAIN)
         val rowCount = database.getDao().countTableRowsAirPollution()
@@ -77,12 +89,14 @@ class AirPollutionFragment : Fragment() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private suspend fun setData(city: String) = withContext(Dispatchers.IO) {
         try {
             val database = MainDb.getDb(MAIN)
             val url = "https://www.iqair.com/ru/russia/${city}"
             val client = OkHttpClient()
-            val date = "17/05/2024"
+            val currDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a"))
+            val date = "${currDate}"
 
             val request = Request.Builder()
                 .url(url)
@@ -95,14 +109,11 @@ class AirPollutionFragment : Fragment() {
 
                 val container = document.select("div[class=aqi-overview]")
 
-                    val aqi = container.select("div[class=aqi-overview__summary aqi-yellow]")
-                        .select("div[class=aqi-value-wrapper]")
-                        .select("div[class=aqi-box-yellow aqi-value]")
+                    val aqi = container.select("div[class=aqi-value-wrapper]")
                         .select("p[class=aqi-value__value]")
                         .text()
 
-                    val pollutionLevel = container.select("div[class=aqi-overview__summary aqi-yellow]")
-                        .select("div[class=aqi-value-wrapper]")
+                    val pollutionLevel = container.select("div[class=aqi-value-wrapper]")
                         .select("p[class=aqi-status]")
                         .select("span[class=aqi-status__text]")
                         .text()
@@ -187,7 +198,7 @@ class AirPollutionFragment : Fragment() {
 
     private suspend fun genRecycleAir(city: String): LiveData<List<AirPollutionModel>> = withContext(Dispatchers.IO){
         val listAir = MutableLiveData<List<AirPollutionModel>>()
-        //try {
+        try {
             val url = "https://www.iqair.com/ru/russia/${city}"
             val client = OkHttpClient()
 
@@ -244,15 +255,15 @@ class AirPollutionFragment : Fragment() {
                 }
             }
         return@withContext listAir
-        //}
-        /*catch (e: Exception) {
+        }
+        catch (e: Exception) {
             Toast.makeText(
                 MAIN,
                 "${e}",
                 Toast.LENGTH_SHORT
             ).show()
-            return listAir
-        }*/
+            return@withContext listAir
+        }
     }
 
     companion object {

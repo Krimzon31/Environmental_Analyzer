@@ -69,19 +69,21 @@
                 app:layout_constraintTop_toTopOf="@+id/settingButtonUV" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvCityUV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70dp"
+                android:layout_marginStart="161dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginEnd="173dp"
                 android:text="Пенза"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@+id/tvDateUV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDateUV" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tvUVindex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -89,8 +91,8 @@
                 android:text="3"
                 android:textColor="@color/white"
                 android:textSize="48sp"
-                app:layout_constraintStart_toStartOf="@+id/textView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintStart_toStartOf="@+id/tvCityUV"
+                app:layout_constraintTop_toBottomOf="@+id/tvCityUV" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardUVIndicate"
@@ -123,21 +125,23 @@
                 android:id="@+id/tvUVlevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-30dp"
+                android:layout_marginStart="153dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="153dp"
                 android:text="Умеренный"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/textView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvUVindex" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcUV"
         android:layout_width="391dp"
         android:layout_height="433dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageUvbackground"
         app:layout_constraintEnd_toEndOf="@+id/cardViewUVrad"
         app:layout_constraintStart_toStartOf="@+id/cardViewUVrad"
