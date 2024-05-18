@@ -48,7 +48,7 @@
                 android:id="@+id/tvAirLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-100dp"
+                android:layout_marginStart="-110dp"
                 android:text="Пенза"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -61,19 +61,19 @@
                 android:id="@+id/tvAirPoll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-15dp"
+                android:layout_marginStart="-5dp"
                 android:layout_marginTop="10dp"
                 android:text="Хорошее"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="@+id/tvAirLocation"
+                app:layout_constraintStart_toStartOf="@+id/tvAQI"
                 app:layout_constraintTop_toBottomOf="@+id/tvAQI" />
 
             <TextView
                 android:id="@+id/tvAQI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="-10dp"
+                android:layout_marginStart="-8dp"
                 android:layout_marginTop="15dp"
                 android:text="58*"
                 android:textColor="@color/white"
@@ -85,39 +85,13 @@
                 android:id="@+id/tvMainPoll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="65dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="Главный загрязнитель: PM2.5"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/tvAirDate"
                 app:layout_constraintTop_toBottomOf="@+id/tvAirPoll" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/img cardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="6dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgAirPoll"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@null"
-                        android:backgroundTint="@null"
-                        android:src="@drawable/ic_launcher_foreground"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
 
             <ImageButton
                 android:id="@+id/settingsButtonAir"
@@ -143,6 +117,31 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/settingsButtonAir" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/pollutionImg"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

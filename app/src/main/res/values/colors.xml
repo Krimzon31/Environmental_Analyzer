@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg">#997BB5E3</color>
     <color name="bgAirPol">#9988939C</color>
+    <color name="bgAirPolItem">#8B99A8B5</color>
     <color name="bgUVRad">#99513B61</color>
 
     <color name="UVGreenIndicate">#1FA300</color>
@@ -11,4 +12,6 @@
     <color name="UVOrangeIndicate">#FF7721</color>
     <color name="UVRedIndicate">#FF0000</color>
     <color name="UVPerpleIndicate">#D227FF</color>
+
+    <color name="danger">#431A4E</color>
 </resources>
