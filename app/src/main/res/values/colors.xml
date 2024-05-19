@@ -9,6 +9,9 @@
     <color name="bgUVRadItem">#9978598E</color>
     <color name="bgzGeomagnetic">#68F17B13</color>
     <color name="bgzGeomagnetic2">#99B86C28</color>
+    <color name="bgAllergy">#8071E157</color>
+    <color name="bgAllergyItem">#804D9E3A</color>
+    <color name="bgAllergycard">#71E157</color>
 
     <color name="UVGreenIndicate">#1FA300</color>
     <color name="UVYellowIndicate">#FFBB00</color>
