@@ -29,6 +29,7 @@ import com.example.environmental_analyzer.MainViewModel
 import com.example.environmental_analyzer.Models.WeatherModel
 import com.example.environmental_analyzer.R
 import com.example.environmental_analyzer.adapters.VpAdapter
+import com.example.environmental_analyzer.cityConst
 import com.example.environmental_analyzer.databinding.FragmentWeatherBinding
 import com.example.environmental_analyzer.recycleFragments.DaysFragment
 import com.example.environmental_analyzer.recycleFragments.HoursFragment
@@ -70,7 +71,7 @@ class WeatherFragment : Fragment() {
         checkPermission()
         checkNETConnection()
         init()
-        requestWeatherData("Penza")
+        requestWeatherData(cityConst)
         updateCurrentCard()
 
         binding.syncButton.setOnClickListener {
@@ -78,7 +79,7 @@ class WeatherFragment : Fragment() {
             Thread {
                 db.getDao().deleteAllWeather()
             }.start()
-            requestWeatherData("Penza")
+            requestWeatherData(cityConst)
         }
 
         binding.recWeatherButton.setOnClickListener {
@@ -112,10 +113,12 @@ class WeatherFragment : Fragment() {
 
         binding.settingButton.setOnClickListener {
 
-            val items = listOf("Пенза", "Москва")
+            val items = listOf("Пенза", "Москва", "Пермь", "Саратов", "Саранск")
             DialogManager.locationSettingsDialog(requireContext(), object : DialogManager.Listener{
                 override fun onClick(city: String) {
-                    if (city == "Пенза"){
+                    cityConst = city
+
+                    if (cityConst == "Пенза"){
                         val db = MainDb.getDb(MAIN)
                         Thread {
                             db.getDao().deleteAllWeather()
@@ -124,12 +127,39 @@ class WeatherFragment : Fragment() {
                         updateCurrentCard()
                         init()
                     }
-                    if (city == "Москва"){
+                    if (cityConst == "Москва"){
                         val db = MainDb.getDb(MAIN)
                         Thread {
                             db.getDao().deleteAllWeather()
                         }.start()
                         requestWeatherData("moscow")
+                        updateCurrentCard()
+                        init()
+                    }
+                    if (cityConst == "Пермь"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        requestWeatherData("perm")
+                        updateCurrentCard()
+                        init()
+                    }
+                    if (cityConst == "Саратов"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        requestWeatherData("saratov")
+                        updateCurrentCard()
+                        init()
+                    }
+                    if (cityConst == "Саранск"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        requestWeatherData("saransk")
                         updateCurrentCard()
                         init()
                     }

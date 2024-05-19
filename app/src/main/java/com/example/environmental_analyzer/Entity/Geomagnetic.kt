@@ -14,7 +14,7 @@ data class Geomagnetic(
     val city: String,
 
     @ColumnInfo(name = "date")
-    val date: String,
+    val date: Int,
 
     @ColumnInfo(name = "meteoIndex")
     val meteoIndex: String,

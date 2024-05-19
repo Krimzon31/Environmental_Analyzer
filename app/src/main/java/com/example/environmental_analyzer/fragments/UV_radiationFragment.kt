@@ -25,6 +25,7 @@ import com.example.environmental_analyzer.MainDb
 import com.example.environmental_analyzer.Models.UVRadiationModel
 import com.example.environmental_analyzer.R
 import com.example.environmental_analyzer.adapters.UVRadiationAdapder
+import com.example.environmental_analyzer.cityConst
 import com.example.environmental_analyzer.databinding.FragmentUVRadiationBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -57,7 +58,7 @@ class UV_radiationFragment : Fragment() {
         checkNETConnection()
         Proverca()
         updateCurrentCard()
-        initRecycle("penza")
+        initRecycle(cityConst)
 
         binding.syncUVbutton.setOnClickListener {
             val db = MainDb.getDb(MAIN)
@@ -65,7 +66,7 @@ class UV_radiationFragment : Fragment() {
                 db.getDao().deleteUVRad()
             }.start()
             lifecycleScope.launchWhenStarted {
-                setData("penza")
+                setData(cityConst)
             }
             updateCurrentCard()
             Toast.makeText(
@@ -87,6 +88,77 @@ class UV_radiationFragment : Fragment() {
             }
 
             DialogManager.recomendationDialog(requireContext(), rec)
+        }
+
+        binding.settingButtonUV.setOnClickListener {
+
+            val items = listOf("Пенза", "Москва", "Пермь", "Саратов", "Саранск")
+            DialogManager.locationSettingsDialog(requireContext(), object : DialogManager.Listener{
+                override fun onClick(city: String) {
+                    cityConst = city
+
+                    if (cityConst == "Пенза"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "penza"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                        initRecycle(cityConst)
+                    }
+                    if (cityConst == "Москва"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "moscow"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                        initRecycle(cityConst)
+                    }
+                    if (cityConst == "Пермь"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "perm"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                        initRecycle(cityConst)
+                    }
+                    if (cityConst == "Саратов"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "saratov"
+                            setData("saratov")
+                        }
+                        updateCurrentCard()
+                        initRecycle(cityConst)
+                    }
+                    if (cityConst == "Саранск"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "saransk"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                        initRecycle(cityConst)
+                    }
+                }
+            }, items)
         }
     }
 

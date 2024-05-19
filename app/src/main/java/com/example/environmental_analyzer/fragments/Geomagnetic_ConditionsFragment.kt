@@ -19,6 +19,7 @@ import com.example.environmental_analyzer.Entity.Geomagnetic
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainDb
 import com.example.environmental_analyzer.R
+import com.example.environmental_analyzer.cityConst
 import com.example.environmental_analyzer.databinding.FragmentGeomagneticConditionsBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -54,7 +55,7 @@ class Geomagnetic_ConditionsFragment : Fragment() {
                 db.getDao().deleteGeomagnetic()
             }.start()
             lifecycleScope.launchWhenStarted {
-                setData("penza")
+                setData(cityConst)
             }
             updateCurrentCard()
             Toast.makeText(
@@ -76,6 +77,72 @@ class Geomagnetic_ConditionsFragment : Fragment() {
             }
 
             DialogManager.recomendationDialog(requireContext(), rec)
+        }
+
+        binding.selectCytiGeomagneticButton.setOnClickListener {
+
+            val items = listOf("Пенза", "Москва", "Пермь", "Саратов", "Саранск")
+            DialogManager.locationSettingsDialog(requireContext(), object : DialogManager.Listener{
+                override fun onClick(city: String) {
+                    cityConst = city
+
+                    if (cityConst == "Пенза"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "penza"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                    }
+                    if (cityConst == "Москва"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "moscow"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                    }
+                    if (cityConst == "Пермь"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "perm"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                    }
+                    if (cityConst == "Саратов"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "saratov"
+                            setData("saratov")
+                        }
+                        updateCurrentCard()
+                    }
+                    if (cityConst == "Саранск"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        lifecycleScope.launchWhenStarted {
+                            cityConst = "saransk"
+                            setData(cityConst)
+                        }
+                        updateCurrentCard()
+                    }
+                }
+            }, items)
         }
     }
 
