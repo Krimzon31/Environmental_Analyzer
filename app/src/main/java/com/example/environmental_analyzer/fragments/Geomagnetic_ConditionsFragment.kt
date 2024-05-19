@@ -14,6 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
+import com.example.environmental_analyzer.DialogManager
 import com.example.environmental_analyzer.Entity.Geomagnetic
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainDb
@@ -61,6 +62,20 @@ class Geomagnetic_ConditionsFragment : Fragment() {
                 "Данные обновлены",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        binding.recGeomagneticButton.setOnClickListener {
+            var rec = ""
+
+            when(binding.tvMeteoIndex.text){
+                "1" -> rec = MAIN.resources.getString(R.string.GeoLevel1)
+                "2" -> rec = MAIN.resources.getString(R.string.GeoLevel2)
+                "3"-> rec = MAIN.resources.getString(R.string.GeoLevel3)
+                "4"-> rec = MAIN.resources.getString(R.string.GeoLevel4)
+                "5" -> rec = MAIN.resources.getString(R.string.GeoLevel5)
+            }
+
+            DialogManager.recomendationDialog(requireContext(), rec)
         }
     }
 

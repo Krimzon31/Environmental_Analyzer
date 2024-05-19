@@ -3,12 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bg">#997BB5E3</color>
-    <color name="bgAirPol">#9988939C</color>
+    <color name="butWeather">#59A8E6</color>
+    <color name="bgAirPol">#9A88939C</color>
     <color name="bgAirPolItem">#8B99A8B5</color>
+    <color name="butAirPol">#8B99A8B5</color>
     <color name="bgUVRad">#99513B61</color>
     <color name="bgUVRadItem">#9978598E</color>
+    <color name="buttUVRad">#9978598E</color>
     <color name="bgzGeomagnetic">#68F17B13</color>
     <color name="bgzGeomagnetic2">#99B86C28</color>
+    <color name="butGeomagnetic">#B86C28</color>
     <color name="bgAllergy">#8071E157</color>
     <color name="bgAllergyItem">#804D9E3A</color>
     <color name="bgAllergycard">#71E157</color>

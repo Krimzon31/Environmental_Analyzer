@@ -20,13 +20,15 @@ import androidx.lifecycle.lifecycleScope
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.environmental_analyzer.DialogManager
 import com.example.environmental_analyzer.Entity.Weather
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainActivity
 import com.example.environmental_analyzer.MainDb
 import com.example.environmental_analyzer.MainViewModel
-import com.example.environmental_analyzer.adapters.VpAdapter
 import com.example.environmental_analyzer.Models.WeatherModel
+import com.example.environmental_analyzer.R
+import com.example.environmental_analyzer.adapters.VpAdapter
 import com.example.environmental_analyzer.databinding.FragmentWeatherBinding
 import com.example.environmental_analyzer.recycleFragments.DaysFragment
 import com.example.environmental_analyzer.recycleFragments.HoursFragment
@@ -77,6 +79,62 @@ class WeatherFragment : Fragment() {
                 db.getDao().deleteAllWeather()
             }.start()
             requestWeatherData("Penza")
+        }
+
+        binding.recWeatherButton.setOnClickListener {
+            var rec = ""
+
+            val currentTempText = binding.tvCurrentTemp.text.toString()
+            var currentTemp = currentTempText.replace("°C", "").toDouble()
+
+            if(currentTemp < 0){
+                rec = MAIN.resources.getString(R.string.WeatherLevel1)
+            }
+
+            if(0 < currentTemp && 10 > currentTemp){
+                rec = MAIN.resources.getString(R.string.WeatherLevel2)
+            }
+
+            if(10 < currentTemp && 20 > currentTemp){
+                rec = MAIN.resources.getString(R.string.WeatherLevel3)
+            }
+
+            if(20 < currentTemp && 30 > currentTemp){
+                rec = MAIN.resources.getString(R.string.WeatherLevel4)
+            }
+
+            if(30 < currentTemp){
+                rec = MAIN.resources.getString(R.string.WeatherLevel5)
+            }
+
+            DialogManager.recomendationDialog(requireContext(), rec)
+        }
+
+        binding.settingButton.setOnClickListener {
+
+            val items = listOf("Пенза", "Москва")
+            DialogManager.locationSettingsDialog(requireContext(), object : DialogManager.Listener{
+                override fun onClick(city: String) {
+                    if (city == "Пенза"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        requestWeatherData("penza")
+                        updateCurrentCard()
+                        init()
+                    }
+                    if (city == "Москва"){
+                        val db = MainDb.getDb(MAIN)
+                        Thread {
+                            db.getDao().deleteAllWeather()
+                        }.start()
+                        requestWeatherData("moscow")
+                        updateCurrentCard()
+                        init()
+                    }
+                }
+            }, items)
         }
     }
 

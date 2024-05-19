@@ -120,6 +120,19 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/recButtonAllergy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/bgAllergycard"
+                android:text="Рекомендация"
+                android:textColor="@color/white"
+                app:cornerRadius="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/syncAllergyButt"
+                app:layout_constraintStart_toEndOf="@+id/cityUpdateButt"
+                app:layout_constraintTop_toBottomOf="@+id/tvMainAllergy" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

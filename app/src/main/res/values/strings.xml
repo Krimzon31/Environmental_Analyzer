@@ -4,6 +4,72 @@
     <string name="HoursStr">Часы</string>
     <string name="DaysStr">Дни</string>
 
+    <string name="AllergyRecom">Если у вас присутствует аллергия на любое из перечисленных растений,
+        вам следует исключить или максимально уменьшить контакт с этими растениями.
+        Также вам следует носить с собой средства для облегчения симптомов аллергии.
+    Ещё одной полезной мерой будет защита дыхательных путей от попадания пыльцы</string>
+
+
+
+    <string name="AirLevel1"> Воздух несильно загрязнён, можете не беспокоится об этом</string>
+
+    <string name="AirLevel2"> Воздух слегка загрязнён можете не переживать угрозы здоровью нет, хорошего дня</string>
+
+    <string name="AirLevel3"> Загрязнение воздуха несёт опасность для некоторых групп людей,
+        если вы относитесь к этой группе вам следует оставаться дома или воспользуйтесь средствами для защиты дыхательных путей</string>
+
+    <string name="AirLevel4">Воздух загрезнён и может оказать влияние на здоровье,
+        рекомендую оставаться дома или воспользуйтесь средствами для защиты дыхательных путей</string>
+
+    <string name="AirLevel5">Воздух сильно загрязнён пожалуйста оставаться дома
+        или воспользуйтесь средствами для защиты дыхательных путей</string>
+
+    <string name="AirLevel6">Загрязнение воздуха представляет опасность для здоровья используйте средства защиты дыхательных путей
+        и покиньте место наибольшего загрязнения</string>
+
+
+
+    <string name="UVLevel1">Уровень УФ излучения низок и не несёт угрозы здоровью</string>
+
+    <string name="UVLevel2">Уровень УФ умерен и не несёт вреда здоровью,
+        но в избежании солнечного удара рекомендуется носить головной убор </string>
+
+    <string name="UVLevel3">Уровень УФ высокий, вам следует использовать средства для защиты от солнца и головной убор</string>
+
+    <string name="UVLevel4">Уровень УФ излучения очень высокий, рекомендуется минимизировать прибывание на солнце,
+        а также использовать средства индивидуальной защиты и головной убор, чтобы избежать проблем со здоровьем</string>
+
+    <string name="UVLevel5">Экстремальный уровень УФ излучения, в обязательном порядке следует использовать средства для защиты от солнца,
+    также не рекомендуется находится на открытых солнечных лучах, так как это может нанести вред вашему здоровью</string>
+
+
+
+    <string name="GeoLevel1">Метеактивность минимальна предпринимать лишних дейтвий не стоит</string>
+
+    <string name="GeoLevel2">Метеактивность небольшая,
+        метеочувствительные люди могут испытывать незначительное недомогание не стоит обращать пристального внимания на это</string>
+
+    <string name="GeoLevel3">Метеоактивность средняя,
+        метеочувствительные люди могут испытывать недомогание, следует уменьшить физическую нагрузку</string>
+
+    <string name="GeoLevel4">Метеоактивность выше среднего,
+        метеочувствительные люди могут испытывать недомогание, которое приносит дискомфорт, рекомендуется отдохнуть или даже вздремнуть</string>
+
+    <string name="GeoLevel5">Метеоактивность высокая,
+        метеочувствительные люди могут испытывать значительное недомогание, следует отдохнуть и принять все меры по минимизации дискомфорта</string>
+
+
+
+    <string name="WeatherLevel1">Температура ниже нуля, так что стоит задуматься о подборе теплой одежды</string>
+
+    <string name="WeatherLevel2">Температура низкая поэтому стоит поискать верхнюю одежду</string>
+
+    <string name="WeatherLevel3">Температура достаточно тёплая чтобы отказаться от верхней одежды</string>
+
+    <string name="WeatherLevel4">Температура высокая, рекомендаций нет</string>
+
+    <string name="WeatherLevel5">Температура высокая, следует следить за своим самочувствием и не допускать перегрева организма</string>
+
     <string-array name="Feb">
         <item>Гамамелис</item>
     </string-array>
@@ -183,6 +249,48 @@
         <item>Хризантема</item>
     </string-array>
 
-    <string-array name="NoSeson">
-    </string-array>
+    <string-array name="NoSeson"></string-array>
+    <string name="title_activity_recomindation">RecomindationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
 </resources>

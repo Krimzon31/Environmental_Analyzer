@@ -18,6 +18,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.environmental_analyzer.DialogManager
 import com.example.environmental_analyzer.Entity.AirPollution
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainDb
@@ -71,6 +72,21 @@ class AirPollutionFragment : Fragment() {
                 "Данные обновлены",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        binding.recAirButton.setOnClickListener {
+            var rec = ""
+
+            when(binding.tvAirPoll.text){
+                "Хорошо" -> rec = MAIN.resources.getString(R.string.AirLevel1)
+                "Средне" -> rec = MAIN.resources.getString(R.string.AirLevel2)
+                "Вредно для уязвимых групп"-> rec = MAIN.resources.getString(R.string.AirLevel3)
+                "Вредно"-> rec = MAIN.resources.getString(R.string.AirLevel4)
+                "Очень вредно" -> rec = MAIN.resources.getString(R.string.AirLevel5)
+                "Опасно" -> rec = MAIN.resources.getString(R.string.AirLevel6)
+            }
+
+            DialogManager.recomendationDialog(requireContext(), rec)
         }
     }
 

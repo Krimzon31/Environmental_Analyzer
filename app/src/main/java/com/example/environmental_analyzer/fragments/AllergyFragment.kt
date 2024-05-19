@@ -15,6 +15,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.environmental_analyzer.DialogManager
 import com.example.environmental_analyzer.Entity.Allergy
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainDb
@@ -33,6 +34,7 @@ class AllergyFragment : Fragment() {
     lateinit var binding: FragmentAllergyBinding
     private lateinit var adapter: AllergyAdapter
     private lateinit var recyclerView: RecyclerView
+    private lateinit var bundle: Bundle
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +46,8 @@ class AllergyFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        bundle = Bundle()
 
         Proverca()
         updateCurrentCard()
@@ -62,6 +66,11 @@ class AllergyFragment : Fragment() {
                 "Данные обновлены",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        binding.recButtonAllergy.setOnClickListener{
+            val rec = MAIN.resources.getString(R.string.AllergyRecom)
+            DialogManager.recomendationDialog(requireContext(), rec)
         }
     }
 

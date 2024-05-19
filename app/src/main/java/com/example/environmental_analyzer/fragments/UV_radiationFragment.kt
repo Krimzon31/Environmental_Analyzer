@@ -18,6 +18,7 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.environmental_analyzer.DialogManager
 import com.example.environmental_analyzer.Entity.UVRadiation
 import com.example.environmental_analyzer.MAIN
 import com.example.environmental_analyzer.MainDb
@@ -72,6 +73,20 @@ class UV_radiationFragment : Fragment() {
                 "Данные обновлены",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        binding.recUVbutton.setOnClickListener {
+            var rec = ""
+
+            when(binding.tvUVlevel.text){
+                "низкий" -> rec = MAIN.resources.getString(R.string.UVLevel1)
+                "умеренный" -> rec = MAIN.resources.getString(R.string.UVLevel2)
+                "высокий"-> rec = MAIN.resources.getString(R.string.UVLevel3)
+                "очень высокий"-> rec = MAIN.resources.getString(R.string.UVLevel4)
+                "экстремальный" -> rec = MAIN.resources.getString(R.string.UVLevel5)
+            }
+
+            DialogManager.recomendationDialog(requireContext(), rec)
         }
     }
 
