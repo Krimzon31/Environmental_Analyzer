@@ -3,4 +3,186 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="HoursStr">Часы</string>
     <string name="DaysStr">Дни</string>
+
+    <string-array name="Feb">
+        <item>Гамамелис</item>
+    </string-array>
+
+    <string-array name="March">
+        <item>Крокус</item>
+        <item>Кипарисы</item>
+        <item>Подснежник</item>
+        <item>Ольха</item>
+        <item>Верба</item>
+        <item>Лещина</item>
+    </string-array>
+
+    <string-array name="Aprl">
+        <item>Ольха</item>
+        <item>Гиацинт</item>
+        <item>Крокус</item>
+        <item>Магнолия</item>
+        <item>Нарцисс</item>
+        <item>Орешник</item>
+        <item>Подснежник</item>
+        <item>Таволга</item>
+        <item>Тюльпан</item>
+        <item>Фритиллярия</item>
+        <item>Айва</item>
+        <item>Хеномелес</item>
+        <item>Береза</item>
+        <item>Дуб</item>
+        <item>Ясень</item>
+        <item>Тополь</item>
+        <item>Ива</item>
+        <item>Клен</item>
+        <item>Вяз</item>
+        <item>Осина</item>
+        <item>Экзохорда</item>
+    </string-array>
+
+    <string-array name="May">
+        <item>Береза</item>
+        <item>Боярашник</item>
+        <item>Ель</item>
+        <item>Дуб</item>
+        <item>Ясень</item>
+        <item>Тополь</item>
+        <item>Ива</item>
+        <item>Клен</item>
+        <item>Вяз</item>
+        <item>Осина</item>
+        <item>Экзохорда</item>
+        <item>Сосна</item>
+        <item>Ирис</item>
+        <item>Гиацинт</item>
+        <item>Магнолия</item>
+        <item>Нарцисс</item>
+        <item>Пион</item>
+        <item>Сирень</item>
+        <item>Таволга</item>
+        <item>Тюльпан</item>
+        <item>Фритиллярия</item>
+        <item>Ель</item>
+    </string-array>
+
+    <string-array name="Jun">
+        <item>Астильба</item>
+        <item>Боярышник</item>
+        <item>Будлеи</item>
+        <item>Вейгела</item>
+        <item>Идезия</item>
+        <item>Липа</item>
+        <item>Ель</item>
+        <item>Сосна</item>
+        <item>Ирис</item>
+        <item>Одуванчик</item>
+        <item>Пион</item>
+        <item>Подорожник</item>
+        <item>Роза</item>
+        <item>Сирень</item>
+        <item>Стиракс</item>
+        <item>Стиракс</item>
+        <item>Таволга</item>
+        <item>Тюльпановое</item>
+        <item>Тюльпановое дерево</item>
+        <item>Физокарпус</item>
+        <item>Рожь</item>
+        <item>Гречишные</item>
+        <item>Овсяница</item>
+        <item>Ежа</item>
+        <item>Тимофеевка</item>
+        <item>Мятлик</item>
+        <item>Райграс</item>
+        <item>Лисохвост</item>
+        <item>Костер</item>
+        <item>Пырей</item>
+    </string-array>
+
+    <string-array name="Jul">
+        <item>Астильба</item>
+        <item>Будлеи</item>
+        <item>Вейгела</item>
+        <item>Крапива</item>
+        <item>Лилейник</item>
+        <item>Лилия</item>
+        <item>Ирис</item>
+        <item>Роза</item>
+        <item>Липа</item>
+        <item>Ель</item>
+        <item>Сосна</item>
+        <item>Магнолия</item>
+        <item>Подорожник</item>
+        <item>Пролески</item>
+        <item>Райграс</item>
+        <item>Таволга</item>
+        <item>Рожь</item>
+        <item>Гречишные</item>
+        <item>Ежа</item>
+        <item>Костер</item>
+        <item>Лисохвост</item>
+        <item>Мятлик</item>
+        <item>Тимофеевка</item>
+        <item>Овсяница</item>
+        <item>Пырей</item>
+        <item>Одуванчик</item>
+        <item>Полынь</item>
+        <item>Амброзия</item>
+        <item>Марь</item>
+        <item>Лебеда</item>
+    </string-array>
+
+    <string-array name="Aug">
+        <item>Крапива</item>
+        <item>Подорожник</item>
+        <item>Райграс</item>
+        <item>Тимофеевка</item>
+        <item>Овсяница</item>
+        <item>Пырей</item>
+        <item>Полынь</item>
+        <item>Амброзия</item>
+        <item>Марь</item>
+        <item>Лебеда</item>
+    </string-array>
+
+    <string-array name="Sep">
+        <item>Астра</item>
+        <item>Будлеи</item>
+        <item>Вейгела</item>
+        <item>Георгина</item>
+        <item>Канны</item>
+        <item>Роза</item>
+        <item>Таволга</item>
+        <item>Хризантема</item>
+        <item>Циклохена</item>
+        <item>Полынь</item>
+        <item>Амброзия</item>
+        <item>Марь</item>
+        <item>Лебеда</item>
+    </string-array>
+
+    <string-array name="Okt">
+        <item>Роза</item>
+        <item>Хризантема</item>
+        <item>Циклохена</item>
+        <item>Полынь</item>
+        <item>Амброзия</item>
+        <item>Марь</item>
+        <item>Лебеда</item>
+    </string-array>
+
+    <string-array name="Nov">
+        <item>Астра</item>
+        <item>Альстромерия</item>
+        <item>Бальзамин Уоллера</item>
+        <item>Бархатцы</item>
+        <item>Газания</item>
+        <item>Немезия</item>
+        <item>Флокс Друмонда</item>
+        <item>Фуксия</item>
+        <item>Хризантема</item>
+    </string-array>
+
+    <string-array name="NoSeson">
+    </string-array>
 </resources>

@@ -34,7 +34,6 @@ import okhttp3.Request
 import org.jsoup.Jsoup
 import java.io.IOException
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class AirPollutionFragment : Fragment() {
 
@@ -95,8 +94,8 @@ class AirPollutionFragment : Fragment() {
             val database = MainDb.getDb(MAIN)
             val url = "https://www.iqair.com/ru/russia/${city}"
             val client = OkHttpClient()
-            val currDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a"))
-            val date = "${currDate}"
+            val currDate = LocalDateTime.now()
+            val date = "${currDate.dayOfMonth}-${currDate.monthValue}-${currDate.year}"
 
             val request = Request.Builder()
                 .url(url)

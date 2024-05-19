@@ -26,7 +26,6 @@ import okhttp3.Request
 import org.jsoup.Jsoup
 import java.io.IOException
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class Geomagnetic_ConditionsFragment : Fragment() {
 
@@ -81,12 +80,12 @@ class Geomagnetic_ConditionsFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private suspend fun setData(city: String) = withContext(Dispatchers.IO) {
-        //try {
+        try {
             val database = MainDb.getDb(MAIN)
             val url = "https://world-weather.ru/pogoda/russia/${city}/biometeorology/"
             val client = OkHttpClient()
-            val currDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a"))
-            val date = "${currDate}"
+            val currDate = LocalDateTime.now()
+            val date = "${currDate.dayOfMonth}-${currDate.monthValue}-${currDate.year}"
 
             val request = Request.Builder()
                 .url(url)
@@ -150,14 +149,14 @@ class Geomagnetic_ConditionsFragment : Fragment() {
 
                     database.getDao().insertGeomagnetic(geomagnet)
             }
-        //}
-        /*catch (e: Exception) {
+        }
+        catch (e: Exception) {
             Toast.makeText(
                 MAIN,
                 "${e}",
                 Toast.LENGTH_SHORT
             ).show()
-        }*/
+        }
     }
 
     private fun checkNETConnection(){

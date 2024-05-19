@@ -85,6 +85,41 @@
                 app:layout_constraintEnd_toEndOf="@+id/textView6"
                 app:layout_constraintStart_toStartOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <ImageButton
+                android:id="@+id/syncAllergyButt"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@android:drawable/stat_notify_sync" />
+
+            <ImageButton
+                android:id="@+id/cityUpdateButt"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+            <TextView
+                android:id="@+id/tvAllergyCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Пенза"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -122,7 +157,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
+        android:id="@+id/rcPlant"
+        android:layout_width="380dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageBackAllergy"
         app:layout_constraintEnd_toEndOf="@+id/cardAllergyView"

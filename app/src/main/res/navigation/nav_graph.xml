@@ -29,14 +29,8 @@
         android:label="fragment_more_information"
         tools:layout="@layout/fragment_more_information" >
         <action
-            android:id="@+id/action_recomendationFragment_to_UV_radiationFragment"
-            app:destination="@id/UV_radiationFragment" />
-        <action
             android:id="@+id/action_recomendationFragment_to_weatherFragment"
             app:destination="@id/weatherFragment" />
-        <action
-            android:id="@+id/action_recomendationFragment_to_airPollutionFragment"
-            app:destination="@id/airPollutionFragment" />
     </fragment>
     <fragment
         android:id="@+id/airPollutionFragment"
@@ -45,6 +39,23 @@
         tools:layout="@layout/fragment_air_pollution" >
         <action
             android:id="@+id/action_airPollutionFragment_to_recomendationFragment"
+            app:destination="@id/recomendationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/geomagnetic_ConditionsFragment"
+        android:name="com.example.environmental_analyzer.fragments.Geomagnetic_ConditionsFragment"
+        android:label="fragment_geomagnetic__conditions"
+        tools:layout="@layout/fragment_geomagnetic__conditions" >
+        <action
+            android:id="@+id/action_geomagnetic_ConditionsFragment_to_recomendationFragment"
+            app:destination="@id/recomendationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allergyFragment"
+        android:name="com.example.environmental_analyzer.fragments.AllergyFragment"
+        android:label="AllergyFragment" >
+        <action
+            android:id="@+id/action_allergyFragment_to_recomendationFragment"
             app:destination="@id/recomendationFragment" />
     </fragment>
 </navigation>

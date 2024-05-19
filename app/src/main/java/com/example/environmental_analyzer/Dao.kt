@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.environmental_analyzer.Entity.AirPollution
+import com.example.environmental_analyzer.Entity.Allergy
 import com.example.environmental_analyzer.Entity.Geomagnetic
 import com.example.environmental_analyzer.Entity.UVRadiation
 import com.example.environmental_analyzer.Entity.Weather
@@ -63,4 +64,17 @@ interface Dao {
 
     @Query("DELETE FROM geomagnetic")
     fun deleteGeomagnetic()
+
+
+    @Insert
+    fun insertAllergy(allergy: Allergy)
+
+    @Query("SELECT * FROM allergy")
+    fun getAllergy(): Flow<List<Allergy>>
+
+    @Query("SELECT COUNT(*) FROM allergy")
+    fun countTableRowsAllergy(): LiveData<Int>
+
+    @Query("DELETE FROM allergy")
+    fun deleteAllergy()
 }
