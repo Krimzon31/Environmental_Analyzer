@@ -80,6 +80,7 @@ class WeatherFragment : Fragment() {
                 db.getDao().deleteAllWeather()
             }.start()
             requestWeatherData(cityConst)
+            Toast.makeText(activity, "Данные обновлены", Toast.LENGTH_LONG).show()
         }
 
         binding.recWeatherButton.setOnClickListener {
